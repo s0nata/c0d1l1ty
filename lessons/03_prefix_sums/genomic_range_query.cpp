@@ -90,7 +90,7 @@ vector<int> solution(string &S, vector<int> &P, vector<int> &Q) {
     int T = 3;
     
     // pass 1, aux data structure, O(N) time
-    // partial-sums inspired
+    // partial-sums-inspired
     vector<int> acgt(4,0);
     vector< vector<int> > aux(N,acgt);
     
