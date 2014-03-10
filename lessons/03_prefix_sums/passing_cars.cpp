@@ -59,7 +59,6 @@
  */
 
 int solution(vector<int> &A) {
-    // write your code in C++98
     int cnt_zeroes = 0;
     int cnt_pairs  = 0;
     int N          = A.size();
