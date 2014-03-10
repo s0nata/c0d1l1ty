@@ -81,7 +81,6 @@
 #include <vector>
 
 vector<int> solution(string &S, vector<int> &P, vector<int> &Q) {
-    // write your code in C++98
     int N = S.size();
     int M = P.size();
     
