@@ -1,6 +1,6 @@
 /*
  * Source: https://codility.com/demo/take-sample-test/dominator
- * Result: 41/100 @ https://codility.com/demo/results/demo4DN7QD-QTE/
+ * Result: 75/100 @ https://codility.com/demo/results/demoHDP7K9-HHE/
  *
  * A zero-indexed array A consisting of N integers is given. The
  * dominator of array A is the value that occurs in more than half of
@@ -49,35 +49,62 @@
  *Elements of input arrays can be modified.
  */
 
-// someone should better read the whole task
-//noting that the function can return -1 sometimes
+//surprisingly, 1-element array is valid input
+//also need to take care of integer division
 
+// you can also use includes, for example:
 #include <stack>
 int solution(const vector<int> &A) {
     // write your code in C++98
     int N = A.size();
-
+    
+    if (N < 2) {
+        return -1;
+    }
+    
+    //finding the candidate
     stack<int> candidates;
-
-    //finding the dominator element
+    
     for(int i = 0; i < N; i++) {
-        //we push to empty
+        //empty stack
         if (candidates.empty()) {
             candidates.push(A[i]);
         }
-        //otherwise there is at least one element in the stack
-        else if (A[i] != candidates.top()){
-            candidates.pop();
+        //non-empty stack
+        else {
+            if (candidates.top() != A[i]) {
+                candidates.pop();
+            }
         }
     }
-
-    //finding its first occurence
-    int dominator = candidates.top();
-    int i = 0;
-
-    while (A[i] != dominator) {
-        i++;
+    
+    //fifty-fifty
+    if (candidates.empty()) {
+        return -1;
     }
-
-    return i;
+    else {
+        //checking whether candidate occurs more than in N/2 positions
+        int cand_counter = 0;
+        int candidate = candidates.top();
+        
+        for(int i = 0; i < N; i++) {
+            if (A[i] == candidate) {
+                cand_counter++;
+            }
+        }
+        
+        //careful with division
+        if (cand_counter > N/2) {
+            //find the first position
+            int cand_position = 0;
+            
+            while (A[cand_position] != candidate) {
+                cand_position++;
+            }
+            
+            return cand_position;
+        }
+    }
+    
+    return -1;
 }
