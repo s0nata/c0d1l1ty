@@ -1,0 +1,53 @@
+* TODO LESSONS [3/13]
+1) [X] Time Complexity
+   - [X] *    83/100 TapeEquilibrium 
+   - [X] *   100/100 FrogJmp         
+   - [X] *    88/100 PermMissingElem
+2) [X]  Counting Elements
+   - [X] *   100/100 PermCheck
+   - [X] *   100/100 FrogRiverOne
+   - [X] **   77/100 MaxCounters
+3) [-] PrefixSums
+   - [X] *   100/100PassingCars
+   - [X] **   75/100 GenomicRangeQuery
+   - [X] **  100/100 MinAvgTwoSlice
+   - [ ]     CountDiv
+4) [-] Sorting
+   - [X]     100/100 Distinct
+   - [X] *   100/100 MaxProductOfThree
+   - [X] **   93/100 Triangle
+   - [ ] *** beta2010
+5) [-] Stacks and Queues
+   - [X] *    75/100 Brackets
+   - [X] *   100/100 Nesting
+   - [X] **  100/100 Fish
+   - [ ] **  ???/100 StoneWall = sigma2010
+6) [X] Leader
+   - [X] *   100/100 Dominator
+   - [X] *   100/100 EquiLeader
+7) [-] Maximum slice problem
+   - [ ] **     /100 MaxDoubleSliceSum
+   - [ ] **     /100 MaxProfit
+   - [X] **   53/100 MaxSliceSum
+8) [-] Prime and composite numbers
+   - [X] *   100/100 MinPerimeterRectangle
+   - [ ] **     /100 Peaks
+   - [ ] ***    /100 boron2013
+9) [ ] Sieve of Eratosthenes
+   - [ ] **     /100 CountNonDivisible
+   - [ ] **     /100 CountSemiprimes
+10) [ ] Euclidean algorithm
+    - [ ] *      /100 ChocolatesByNumbers
+    - [ ] **     /100 CommonPrimeDivisors
+11) [ ] Fibonacci numbers
+    - [ ] **     /100 FibFrog
+    - [ ] **     /100 Ladder
+12) [ ] Binary search algorithm
+    - [ ] **     /100 MinMaxDivision
+    - [ ] **     /100 NailingPlanks
+13) [ ] Caterpilar method
+    - [ ] *      /100 CountTriangles
+    - [ ] *      /100 AbsDistinct
+    - [ ] **     /100 CountDistinctSlices
+    - [ ] ***    /100 MinAbsSumOfTwo
+
