@@ -1,6 +1,6 @@
 /*
  * Source: https://codility.com/demo/take-sample-test/perm_missing_elem
- * Result: https://codility.com/demo/results/demoYAH6ZP-8DM/
+ * Result: 100/100 @ https://codility.com/demo/results/demoGP8ZWH-UG5/
  * 
  * A zero-indexed array A consisting of N different integers is given. 
  * The array contains integers in the range [1..(N + 1)], which means that
@@ -38,22 +38,15 @@
  *Elements of input arrays can be modified.
  */
 
-#include <vector>
 int solution(vector<int> &A) {
-    long n = A.size();
-    if (n==0) return -1; // this is really wrong, should be commented out
+    int N = A.size();
     
-    vector<bool> meet(n+1,false);
+    bool oddN = (N % 2 == 0) ? false : true;
+    long sum  = (oddN) ? ((N+1)/2)*(N+2) : ((N+2)/2)*(N+1) ;
     
-    for(int i = 0; i < n; i++){
-        if (meet[A[i]-1] == false){
-            meet[A[i]-1] = true;
-        }
-    }
+    for (int i = 0; i < N; i++)
+        sum -= A[i];
     
-    for(int i = 0; i < n+1; i++){
-        if (meet[i] == false){
-            return i+1;
-        }
-    }
+    return sum;    
 }
+

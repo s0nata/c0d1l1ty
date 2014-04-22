@@ -2,7 +2,7 @@
 1) [X] Time Complexity
    - [X] *   100/100 TapeEquilibrium 
    - [X] *   100/100 FrogJmp         
-   - [X] *    88/100 PermMissingElem
+   - [X] *   100/100 PermMissingElem
 2) [X]  Counting Elements
    - [X] *   100/100 PermCheck
    - [X] *   100/100 FrogRiverOne
