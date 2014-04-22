@@ -1,8 +1,6 @@
 /*
- * Source:  https://codility.com/demo/take-sample-test/tape_equilibrium
- * Results: https://codility.com/demo/results/demoCME37F-MCU/
- *
- * Task:
+ * Source: https://codility.com/demo/take-sample-test/tape_equilibrium
+ * Result: 100/100 @ https://codility.com/demo/results/demoDDB576-XEE/
  *
  * A non-empty zero-indexed array A consisting of N integers is given. Array A
  * represents numbers on a tape. Any integer P, such that 0 < P < N, 
@@ -45,7 +43,8 @@
  * Assume that:
  *
  * N is an integer within the range [2..100,000];
- * each element of array A is an integer within the range [−1,000..1,000].
+ * each element of array A is an integer within the range 
+ *   [−1,000..1,000].
  *
  * Complexity:
  *
@@ -56,32 +55,26 @@
  * Elements of input arrays can be modified.
  */
 
-# include <cstdlib>
-
+#include <cstdlib>
 int solution(vector<int> &A) {
-    // write your code in C++98
-    int n = A.size();
-    //obtain the total sum from 1st elem
-    long long sum_l = 0;
-    for(int i = 1; i < n;i++) {
-        sum_l += (long long) A[i];
+    int N = A.size();
+    
+    int sum_l = A[0];
+    int sum_r = 0;
+    for(int i = 1; i < N; i++) {
+        sum_r += A[i];
     }
     
-    //loop, updating the current minimal diff and right sum
-    // P = 1
-    long long sum_r = (long long) A[0];
-    long min_delta = abs(sum_r - sum_l);
-    long cur_delta = min_delta;
-    
-    for(int i = 1;i < n;i++) {
-        sum_r += (long long) A[i];
-        sum_l -= (long long) A[i];
-        cur_delta = abs(sum_r - sum_l);
-        if (cur_delta < min_delta) {
-            min_delta = cur_delta;
+    //P == 1
+    int min_diff = abs(sum_l - sum_r);
+    //P >=2
+    for (int i = 1; i < N-1;i++) {  //A[N-1] should always stay in sum_r
+        sum_l += A[i];
+        sum_r -= A[i];
+        if (abs(sum_l - sum_r) < min_diff) {
+            min_diff = abs(sum_l - sum_r);
         }
     }
-    
-    return min_delta;
+    return min_diff;
 }
                

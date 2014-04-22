@@ -1,6 +1,6 @@
 * TODO LESSONS [3/13]
 1) [X] Time Complexity
-   - [X] *    83/100 TapeEquilibrium 
+   - [X] *   100/100 TapeEquilibrium 
    - [X] *   100/100 FrogJmp         
    - [X] *    88/100 PermMissingElem
 2) [X]  Counting Elements
