@@ -1,6 +1,6 @@
 /*
  * Source: https://codility.com/demo/take-sample-test/brackets
- * Result: https://codility.com/demo/results/demoUZPF3X-FJ3/
+ * Result: 100/100 @ https://codility.com/demo/results/demoE2G7WZ-DHH/
  *
  * A string S consisting of N characters is considered to be properly
  * nested if any of the following conditions is true:
@@ -37,39 +37,38 @@
  *         storage required for input arguments).
  */
 
-
 #include <stack>
-using namespace std;
-
 int solution(const string &S) {
-    // write your code in C++98
+    if (S.empty()) return 1;
+ 
+    int N = S.length();
+    if (N % 2 == 1) return 0;
+    
     stack<char> brackets;
-    int N = S.size();
     
-    if (N == 0) return 1;
-    
-    int i = 0;
-    brackets.push(S[i]);
-    char cur_top, old_top;
-    i++;
-    
-    do {
-        old_top  = brackets.top();
-        brackets.push(S[i]);
-        cur_top = brackets.top();
-        
-        if (((old_top == '(') and (cur_top == ')')) or
-            ((old_top == '{') and (cur_top == '}'))   or
-            ((old_top == '[') and (cur_top == ']'))){
-            brackets.pop();
-            brackets.pop();
+    for(int i = 0; i < N; i++) {
+        if (brackets.empty()) brackets.push(S[i]);
+        else {
+            //cases when we pop
+            if  ( S[i] == ')' ) {
+                if (brackets.top() != '(')  return 0;
+                else                        brackets.pop();
+            }
+            else if (S[i] == '}') {
+                if (brackets.top() != '{')  return 0;
+                else                        brackets.pop();                
+            }
+            else if (S[i] == ']') {
+                if (brackets.top() != '[')  return 0;
+                else                        brackets.pop();                
+            }
+            //otherwise we push
+            else brackets.push(S[i]);
         }
-        
-        i++;
-        
-    } while (i < N);
+    }
     
     if (brackets.empty()) return 1;
     
     return 0;
 }
+
