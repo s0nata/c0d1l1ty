@@ -1,4 +1,4 @@
-* TODO LESSONS [3/13]
+* TODO LESSONS [4/13]
 1) [X] Time Complexity
    - [X] *   100/100 TapeEquilibrium 
    - [X] *   100/100 FrogJmp         
@@ -7,11 +7,11 @@
    - [X] *   100/100 PermCheck
    - [X] *   100/100 FrogRiverOne
    - [X] **   77/100 MaxCounters
-3) [-] PrefixSums
+3) [X] PrefixSums
    - [X] *   100/100PassingCars
    - [X] **   75/100 GenomicRangeQuery
    - [X] **  100/100 MinAvgTwoSlice
-   - [ ]     CountDiv
+   - [X] **  CountDiv
 4) [-] Sorting
    - [X]     100/100 Distinct
    - [X] *   100/100 MaxProductOfThree
