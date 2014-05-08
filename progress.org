@@ -8,10 +8,10 @@
    - [X] *   100/100 FrogRiverOne
    - [X] **   77/100 MaxCounters
 3) [X] PrefixSums
-   - [X] *   100/100PassingCars
+   - [X] *   100/100 PassingCars
    - [X] **   75/100 GenomicRangeQuery
    - [X] **  100/100 MinAvgTwoSlice
-   - [X] **  CountDiv
+   - [X] **  100/100 CountDiv
 4) [-] Sorting
    - [X]     100/100 Distinct
    - [X] *   100/100 MaxProductOfThree
@@ -26,7 +26,7 @@
    - [X] *   100/100 Dominator
    - [X] *   100/100 EquiLeader
 7) [-] Maximum slice problem
-   - [ ] **     /100 MaxDoubleSliceSum
+   - [X] **  100/100 MaxDoubleSliceSum
    - [ ] **     /100 MaxProfit
    - [X] **   53/100 MaxSliceSum
 8) [-] Prime and composite numbers
