@@ -1,4 +1,4 @@
-* TODO LESSONS [4/13]
+* TODO LESSONS [5/13]
 1) [X] Time Complexity
    - [X] *   100/100 TapeEquilibrium 
    - [X] *   100/100 FrogJmp         
@@ -25,10 +25,10 @@
 6) [X] Leader
    - [X] *   100/100 Dominator
    - [X] *   100/100 EquiLeader
-7) [-] Maximum slice problem
+7) [X] Maximum slice problem
    - [X] **  100/100 MaxDoubleSliceSum
-   - [ ] **     /100 MaxProfit
-   - [X] **   53/100 MaxSliceSum
+   - [X] **  100/100 MaxProfit
+   - [X] **  100/100 MaxSliceSum
 8) [-] Prime and composite numbers
    - [X] *   100/100 MinPerimeterRectangle
    - [ ] **     /100 Peaks

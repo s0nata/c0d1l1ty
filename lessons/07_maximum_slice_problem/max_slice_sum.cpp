@@ -1,6 +1,6 @@
 /*
  * Source: https://codility.com/demo/take-sample-test/max_slice_sum
- * Result: 53/100 @ https://codility.com/demo/results/demoWTEB4Q-U6G/
+ * Result: 100/100 @ https://codility.com/demo/results/demoS7N7CT-477/
  *
  * A non-empty zero-indexed array A consisting of N integers is
  * given. A pair of integers (P, Q), such that 0 ≤ P ≤ Q < N, is
@@ -43,16 +43,17 @@
  * Elements of input arrays can be modified.
  */
 
-#include <algorithm>
+#include <algorithm> //max();
+
 int solution(const vector<int> &A) {
-    //code from the MaxSlice.pdf actually
     
     int N = A.size();
-    long max_cur = 0;
-    long max_tot = 0;
+
+    int max_cur = A[0];
+    int max_tot = A[0];
     
-    for(int i = 0; i < N; i++) {
-        max_cur = max((long) 0,max_cur+A[i]);
+    for(int i = 1; i < N; i++) {
+        max_cur = max(0, max_cur + A[i]);
         max_tot = max(max_cur, max_tot);
     }
     
