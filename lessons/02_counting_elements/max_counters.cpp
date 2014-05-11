@@ -1,6 +1,6 @@
 /*
  * Source: https://codility.com/demo/take-sample-test/max_counters
- * Result: https://codility.com/demo/results/demoSNFWF8-6GH/
+ * Result: 100/100 @ https://codility.com/demo/results/demoVNDT8P-2YH/
  *
  * You are given N counters, initially set to 0, and you have two
  * possible operations on them:
@@ -79,43 +79,31 @@
  * Elements of input arrays can be modified.
  */
 
+#include <algorithm>  //max();
 #include <vector>
 
 vector<int> solution(int N, vector<int> &A) {
-    // write your code in C++98
-    int M = A.size();
-    int cur_max = 0;
-    vector<int> delta(N,cur_max);
-    vector<int> counter(N,0);
+    int M = A.size();           //number of operations
+    vector<int> counter(N,0);   //number of counters
+    int old_max_counter = 0,
+        cur_max_counter = 0;
     
     for(int i = 0; i < M; i++) {
-        if (A[i] == N + 1) {
-            //to avoid reassignings in consequent max_counter operations
-            if (delta[0] != cur_max) {
-                for(int j = 0; j < N; j++) {
-                    delta[j] = cur_max;
-                }
+        if (A[i] < N+1) {
+            if(counter[A[i]-1] < old_max_counter){
+                counter[A[i]-1] = old_max_counter;
             }
+            counter[A[i]-1]++;
+            cur_max_counter = max(cur_max_counter,counter[A[i]-1]);
         }
         else {
-            if (counter[A[i]-1] == cur_max) {
-                delta[A[i]-1] = 0;
-                counter[A[i]-1]++;
-                cur_max++;
-            }
-            else {
-                counter[A[i]-1] = delta[A[i]-1] + 1;
-                delta[A[i]-1] = 0;
-                if (cur_max < counter[A[i]-1])
-                    cur_max = counter[A[i]-1];
-            }
+            old_max_counter = cur_max_counter;
         }
-        
     }
     
-    for(int j = 0; j < N; j++) {
-        if (delta[j] !=0)
-            counter[j] = delta[j];
+    for(int i = 0; i < N; i++) {
+        if (counter[i] < old_max_counter)
+            counter[i] = old_max_counter;
     }
     
     return counter;

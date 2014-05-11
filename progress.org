@@ -6,7 +6,7 @@
 2) [X]  Counting Elements
    - [X] *   100/100 PermCheck
    - [X] *   100/100 FrogRiverOne
-   - [X] **   77/100 MaxCounters
+   - [X] **  100/100 MaxCounters
 3) [X] PrefixSums
    - [X] *   100/100 PassingCars
    - [X] **   75/100 GenomicRangeQuery
