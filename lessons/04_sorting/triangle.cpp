@@ -1,6 +1,6 @@
 /*
  * Source: https://codility.com/demo/take-sample-test/triangle
- * Result: 93/100 @ https://codility.com/demo/results/demoDK9477-7FP/
+ * Result: 100/100 @ https://codility.com/demo/results/demoZHN5VF-8QV/
  *
  * A zero-indexed array A consisting of N integers is given. A
  * triplet (P, Q, R) is triangular if 0 ≤ P < Q < R < N and:
@@ -51,25 +51,23 @@
  * Elements of input arrays can be modified.
  */
 
-
 #include <algorithm>
+
 int solution(const vector<int> &A) {
-    //C++98
+    int N = A.size();
     vector<int> B(A);
     sort(B.begin(),B.end());
-
-    int N = B.size();
-    for (int i = 0; i < N-2; i++) {
-        if (B[i] >=0) {
-            if ( B[i] + B[i+1] > B[i+2] ){
-                if (B[i+1] + B[i+2] > B[i]) {
-                    if (B[i] + B[i+2] > B[i+1]){
-                        return 1;
-                    }
-                }
-            }
-        }
+    
+    if (N < 3) return 0;
+    
+    for(int i = 0; i < N-2; i++) {
+        // B[i]   <= B[i+1] <= B[i+2] implies that
+        // B[i]   < B[i+1] + B[i+2] and
+        // B[i+1] < B[i+2] + B[i] which leaves to check
+        // B[i+2] - B[i] < B[i+1] (overflow possible)
+        if (B[i+1] > B[i+2] - B[i]) return 1;
     }
     
     return 0;
 }
+

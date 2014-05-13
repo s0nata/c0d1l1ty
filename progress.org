@@ -15,7 +15,7 @@
 4) [-] Sorting
    - [X]     100/100 Distinct
    - [X] *   100/100 MaxProductOfThree
-   - [X] **   93/100 Triangle
+   - [X] **  100/100 Triangle
    - [ ] *** beta2010
 5) [-] Stacks and Queues
    - [X] *   100/100 Brackets
