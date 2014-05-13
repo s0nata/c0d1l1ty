@@ -9,7 +9,7 @@
    - [X] **  100/100 MaxCounters
 3) [X] PrefixSums
    - [X] *   100/100 PassingCars
-   - [X] **   75/100 GenomicRangeQuery
+   - [X] **  100/100 GenomicRangeQuery
    - [X] **  100/100 MinAvgTwoSlice
    - [X] **  100/100 CountDiv
 4) [-] Sorting
