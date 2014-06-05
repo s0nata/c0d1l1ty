@@ -2,6 +2,7 @@
  * Source: http://codility.com/demo/take-sample-test/peaks/
  * Result:  36/100 @ https://codility.com/demo/results/demoQ8W6PM-VFP/
  * Result:   9/100 @ https://codility.com/demo/results/demoA7NMY2-HX9/
+ * Result:  63/100 @ https://codility.com/demo/results/demoRJG4MS-G3T/
  *
  * A non-empty zero-indexed array A consisting of N integers is given.
  *
@@ -106,60 +107,84 @@
  * Elements of input arrays can be modified.
  */
 
-// some problems in logics of all the thing, hope to fix next time
+// currently there are problems with chaotic/large sequences
+// smth wrong with conditions (too many)?
 
-#include <vector>
-#include <algorithm>    // std::max
+#include <deque>
 
 int solution(vector<int> &A) {
+    int N = A.size();
     
-    //step 1: find maximal distance between two peaks
-    // O(N)
-    int N = A.size(), old_peak_pos = -1, peaks_number = 0, max_dist_peaks = 0;
-    for (int i = 1; i < N-1; i++) {
-        //current peak
-        if ((A[i] > A[i-1]) && (A[i] > A[i+1])) {
-            //very first peak
-            if (old_peak_pos == -1) {
-                old_peak_pos = i;
+    if (N < 3) return 0;
+    
+    deque<int> divisors;
+    deque<int>::iterator mid = divisors.begin();
+    
+    int j = 2;
+    while (j * j < N) {
+        if (N % j == 0) {
+            if (divisors.empty()) {
+                divisors.push_front(j);
+                divisors.push_back(N/j);
             }
             else {
-                max_dist_peaks = max(i - old_peak_pos - 1,max_dist_peaks);
-                old_peak_pos = i;
+                divisors.insert(mid,j);
+                ++mid;
+                divisors.insert(mid,N/j);
+                ++mid;
             }
-            peaks_number++;
+        }
+        j++;
+    }
+    
+    if (j * j == N) {
+        divisors.insert(mid,j);
+    }
+    
+    //counting peaks
+    int peaks_cnt = 0;
+    for(int i = 1; i < N-1; i++) {
+        if ( (A[i-1] < A[i]) && (A[i] > A[i+1]) ) {
+            peaks_cnt++;
         }
     }
-    max_dist_peaks++;
     
-    // step2: while looping through all divisors of N
-    // the minimal interval length is the largest divisor
-    // that is smaller than max_dist_peaks + 1
-    // O(log(log(N)))
-    int num_of_blocks = 2;
-    int old_num_of_blocks = 1;
+    if (peaks_cnt == 0 ) return 0;
+    if (divisors.empty()) return 1;
     
-    while (num_of_blocks * num_of_blocks < N) {
-        if (N % num_of_blocks == 0) {
-            //direct case
-            if ((N / old_num_of_blocks > max_dist_peaks) && (N / num_of_blocks < max_dist_peaks)) {
-                return num_of_blocks;
+    int D = divisors.size();
+    int cur_len;
+    bool has_peak_this = false;
+    bool has_peak_each = true;
+    
+    for (int i = D-1; i >= 0 ; i--) {
+        //can't be more intervals than peaks
+        if (divisors[i] <= peaks_cnt) {
+            cur_len = N / divisors[i];
+            //loop througn A for each interval
+            for (int q = 0; q <= N - cur_len; q+=cur_len) {
+                //loop through elements of an interval
+                //CAREFUL: peaks can be on borders
+                for(int p = q; p < q + cur_len ; p++) {
+                    //excluding 2 borders
+                    if ((p > 0) && (p < N-1) ) {
+                        //at least one peak in the interval
+                        if ( (A[p-1] < A[p]) && (A[p] > A[p+1]) ) {
+                            has_peak_this = true;
+                            break;  // we leave the interval with positive info
+                        }
+                    }
+                }
+                //we have just left the interval
+                has_peak_each &= has_peak_this;
+                has_peak_this = false;
+                if (!has_peak_each) break;
             }
-            //inverse case
-             if ((old_num_of_blocks < max_dist_peaks) && (num_of_blocks > max_dist_peaks)) {
-                return N / old_num_of_blocks;
-            }
-            //anyway
-            old_num_of_blocks = num_of_blocks;
-        }
-        num_of_blocks++;
-    }
-    // N is j*j case
-    if (N == num_of_blocks * num_of_blocks) {
-        if (num_of_blocks == peaks_number) {
-            return num_of_blocks;
+            // at this point we passed all intervals for current divisor
+            if (has_peak_each) return divisors[i];
         }
     }
     
     return 1;
 }
+
