@@ -33,8 +33,8 @@
    - [X] *   100/100 MinPerimeterRectangle
    - [X] **   63/100 Peaks
    - [ ] ***    /100 boron2013
-9) [ ] Sieve of Eratosthenes
-   - [ ] **     /100 CountNonDivisible
+9) [-] Sieve of Eratosthenes
+   - [X] **   22/100 CountNonDivisible
    - [ ] **     /100 CountSemiprimes
 10) [ ] Euclidean algorithm
     - [ ] *      /100 ChocolatesByNumbers
