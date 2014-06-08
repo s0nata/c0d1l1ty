@@ -6,8 +6,6 @@ import sys
 
 def sieve_int(n):
     sieve = [0] * (n + 1)
-    sieve[0] = 0    # 1
-    sieve[1] = 0    # 2
 
     i = 2
     while( i * i < n):
