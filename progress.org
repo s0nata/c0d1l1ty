@@ -1,3 +1,4 @@
+
 * TODO LESSONS [5/13]
 1) [X] Time Complexity
    - [X] *   100/100 TapeEquilibrium 
@@ -36,8 +37,8 @@
 9) [-] Sieve of Eratosthenes
    - [X] **   22/100 CountNonDivisible
    - [ ] **     /100 CountSemiprimes
-10) [ ] Euclidean algorithm
-    - [ ] *      /100 ChocolatesByNumbers
+10) [-] Euclidean algorithm
+    - [X] *   100/100 ChocolatesByNumbers
     - [ ] **     /100 CommonPrimeDivisors
 11) [ ] Fibonacci numbers
     - [ ] **     /100 FibFrog
