@@ -32,6 +32,7 @@
    - [X] **  100/100 MaxSliceSum
 8) [-] Prime and composite numbers
    - [X] *   100/100 MinPerimeterRectangle
+   - [X] *    92/100 CountFactors
    - [X] **   63/100 Peaks
    - [ ] ***    /100 boron2013
 9) [-] Sieve of Eratosthenes
