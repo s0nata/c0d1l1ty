@@ -1,5 +1,5 @@
 
-* TODO LESSONS [5/13]
+* TODO LESSONS [5/15]
 1) [X] Time Complexity
    - [X] *   100/100 TapeEquilibrium 
    - [X] *   100/100 FrogJmp         
@@ -52,4 +52,10 @@
     - [ ] *      /100 AbsDistinct
     - [ ] **     /100 CountDistinctSlices
     - [ ] ***    /100 MinAbsSumOfTwo
-
+14) [ ] Greedy algorithms
+    - [ ] *      /100 TieRopes
+99) [ ] Future Training
+    - [ ] *      /100 BinaryGap
+    - [ ] *      /100 StrSymmetryPoint
+    - [ ] *      /100 TreeHeight
+    - [ ] **     /100 ArrayInversionCount
