@@ -3,6 +3,7 @@
  * Result:  36/100 @ https://codility.com/demo/results/demoQ8W6PM-VFP/
  * Result:   9/100 @ https://codility.com/demo/results/demoA7NMY2-HX9/
  * Result:  63/100 @ https://codility.com/demo/results/demoRJG4MS-G3T/
+ * Result   90/100 @ https://codility.com/demo/results/demo9RKGFE-8TH/
  *
  * A non-empty zero-indexed array A consisting of N integers is given.
  *
@@ -107,84 +108,94 @@
  * Elements of input arrays can be modified.
  */
 
-// currently there are problems with chaotic/large sequences
-// smth wrong with conditions (too many)?
+// Translated from http://codesays.com/2014/solution-to-peaks-by-codility/
+// improving previous solution
+// https://codility.com/demo/results/demoYYB2JA-GP2/
 
-#include <deque>
+#include <vector>
+using namespace std;
 
 int solution(vector<int> &A) {
     int N = A.size();
     
+    // A is too small to have at least one peak
     if (N < 3) return 0;
     
-    deque<int> divisors;
-    deque<int>::iterator mid = divisors.begin();
-    
-    int j = 2;
-    while (j * j < N) {
-        if (N % j == 0) {
-            if (divisors.empty()) {
-                divisors.push_front(j);
-                divisors.push_back(N/j);
-            }
-            else {
-                divisors.insert(mid,j);
-                ++mid;
-                divisors.insert(mid,N/j);
-                ++mid;
-            }
-        }
-        j++;
-    }
-    
-    if (j * j == N) {
-        divisors.insert(mid,j);
-    }
-    
-    //counting peaks
-    int peaks_cnt = 0;
-    for(int i = 1; i < N-1; i++) {
-        if ( (A[i-1] < A[i]) && (A[i] > A[i+1]) ) {
-            peaks_cnt++;
+    // prefix sum of a number of peaks in A
+    // O(N)
+    vector<int> peaks_sum(N,0);
+    for(int i = 1; i < N-1;i++) {
+        // update current value
+        peaks_sum[i] = peaks_sum[i-1];
+        // if peak
+        if ((A[i-1] < A[i]) and (A[i] > A[i+1])) {
+            peaks_sum[i]++;
         }
     }
+    // last element
+    peaks_sum[N-1] = peaks_sum[N-2];
     
-    if (peaks_cnt == 0 ) return 0;
-    if (divisors.empty()) return 1;
+    // what if there are no peaks?
+    if (peaks_sum[N-1] == 0) return 0;
     
-    int D = divisors.size();
-    int cur_len;
-    bool has_peak_this = false;
-    bool has_peak_each = true;
+    // main loop: number of intervals is some factor of N
+    //            thus we loop, looking for divisors and
+    //            for each (pair) check peaks existence
+    // O(sqrt(N))
+    int divisor = 1; // not to omit border case of 1 interval
+                     // which is possible if N is prime
+    int blocks_size;
+    int blocks_number; // for readability
+    int blocks_number_max = 0;
+    bool break_flag = false;
     
-    for (int i = D-1; i >= 0 ; i--) {
-        //can't be more intervals than peaks
-        if (divisors[i] <= peaks_cnt) {
-            cur_len = N / divisors[i];
-            //loop througn A for each interval
-            for (int q = 0; q <= N - cur_len; q+=cur_len) {
-                //loop through elements of an interval
-                //CAREFUL: peaks can be on borders
-                for(int p = q; p < q + cur_len ; p++) {
-                    //excluding 2 borders
-                    if ((p > 0) && (p < N-1) ) {
-                        //at least one peak in the interval
-                        if ( (A[p-1] < A[p]) && (A[p] > A[p+1]) ) {
-                            has_peak_this = true;
-                            break;  // we leave the interval with positive info
-                        }
+    while( divisor * divisor <= N) {
+        if (N % divisor == 0) {
+        //lesser factor, bigger blocks
+            blocks_number = divisor;
+            blocks_size   = N / divisor;
+
+            // checking whether each block has a peak
+            // by looking at the difference between number
+            // of peaks on the interval borders
+                
+            // if exists a peak in the first block
+            if (peaks_sum[0] != peaks_sum[blocks_size-1]) {
+                // for the rest of the blocks
+                for(int i = blocks_size - 1; i < N - blocks_size; i += blocks_size) {
+                    if (peaks_sum[i] == peaks_sum[blocks_size+i]) {
+                        break_flag = true;
+                        break; // no peak on some interval
                     }
                 }
-                //we have just left the interval
-                has_peak_each &= has_peak_this;
-                has_peak_this = false;
-                if (!has_peak_each) break;
+                if (!break_flag) blocks_number_max = blocks_number;
+                else break_flag = false; //reset
             }
-            // at this point we passed all intervals for current divisor
-            if (has_peak_each) return divisors[i];
+        
+            if (divisor * divisor == N) continue;
+        
+        //greater factor, smaller blocks
+            blocks_size    = divisor;
+            blocks_number = N / divisor;
+            // checking whether each block has a peak
+            // by looking at the difference between number
+            // of peaks on the interval borders
+
+            // if exists a peak in the first block
+            if (peaks_sum[0] != peaks_sum[blocks_size-1]) {
+                // for the rest of the blocks
+                for(int i = blocks_size - 1; i < N - blocks_size; i += blocks_size) {
+                    if (peaks_sum[i] == peaks_sum[blocks_size+i]) {
+                        break_flag = true;
+                        break; // no peak on some interval
+                    }
+                }
+                if (!break_flag) return  blocks_number;
+                else break_flag = false; //reset
+            }
         }
+        divisor++;
     }
     
-    return 1;
+    return blocks_number_max;
 }
-
