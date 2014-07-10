@@ -28,20 +28,26 @@
  *       expected worst-case space complexity is O(1).
  */
 
+#include <cmath>    //sqrt(), ceil()
+
 int solution(int N) {
     if (N == 1) return 1;
-
-    int factors_number = 0;    
-    int i = 2;
     
-    while ( i*i < N ) {
-        if (N % i == 0) {
-            factors_number +=2;
+    int counter = 0,
+        factor = 2,
+        lim = (int) ceil(sqrt(N));
+        
+    while (factor < lim) {
+        if (N % factor == 0) {
+            counter += 2;
         }
-        i++;
+        factor++;
     }
     
-    if ( i*i == N ) factors_number += 1;
+    if (N == factor * factor) {
+        counter++;
+    }
     
-    return factors_number + 2; // 1 and itself;
+    return counter + 2;
 }
+
