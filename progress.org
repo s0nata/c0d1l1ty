@@ -54,8 +54,8 @@
     - [ ] ***    /100 MinAbsSumOfTwo
 14) [ ] Greedy algorithms
     - [ ] *      /100 TieRopes
-99) [ ] Future Training
+15) [-] Future Training
     - [ ] *      /100 BinaryGap
-    - [ ] *      /100 StrSymmetryPoint
+    - [X] *   100/100 StrSymmetryPoint
     - [ ] *      /100 TreeHeight
     - [ ] **     /100 ArrayInversionCount
