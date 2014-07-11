@@ -55,7 +55,7 @@
 14) [ ] Greedy algorithms
     - [ ] *      /100 TieRopes
 15) [-] Future Training
-    - [ ] *      /100 BinaryGap
+    - [X] *   100/100 BinaryGap
     - [X] *   100/100 StrSymmetryPoint
     - [ ] *      /100 TreeHeight
     - [ ] **     /100 ArrayInversionCount
