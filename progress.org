@@ -1,5 +1,5 @@
 
-* TODO LESSONS [5/15]
+* TODO LESSONS [6/15]
 1) [X] Time Complexity
    - [X] *   100/100 TapeEquilibrium 
    - [X] *   100/100 FrogJmp         
@@ -52,8 +52,8 @@
     - [ ] *      /100 AbsDistinct
     - [ ] **     /100 CountDistinctSlices
     - [ ] ***    /100 MinAbsSumOfTwo
-14) [ ] Greedy algorithms
-    - [ ] *      /100 TieRopes
+14) [X] Greedy algorithms
+    - [X] *      100/100 TieRopes ([[https://codility.com/demo/results/demo9RVY6F-8CU/][demo9RVY6F-8CU]])
 15) [-] Future Training
     - [X] *   100/100 BinaryGap
     - [X] *   100/100 StrSymmetryPoint
