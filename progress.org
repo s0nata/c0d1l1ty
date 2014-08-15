@@ -1,45 +1,45 @@
 
 * TODO LESSONS [6/15]
 1) [X] Time Complexity
-   - [X] *   100/100 TapeEquilibrium 
-   - [X] *   100/100 FrogJmp         
-   - [X] *   100/100 PermMissingElem
+   + [X] *   100/100 [[https://codility.com/demo/results/demoDDB576-XEE/][TapeEquilibrium]]
+   + [X] *   100/100 [[https://codility.com/demo/results/demoSFMHFD-QJC/][FrogJmp]]
+   + [X] *   100/100 [[https://codility.com/demo/results/demoGP8ZWH-UG5/][PermMissingElem]]
 2) [X]  Counting Elements
-   - [X] *   100/100 PermCheck
-   - [X] *   100/100 FrogRiverOne
-   - [X] **  100/100 MaxCounters
+   1) [X] *   100/100 [[https://codility.com/demo/results/demoXGK2UC-KUD/][PermCheck]]
+   2) [X] *   100/100 [[https://codility.com/demo/results/demoCYVF2H-J7M/][FrogRiverOne]]
+   3) [X] **  100/100 [[https://codility.com/demo/results/demoVNDT8P-2YH/][MaxCounters]]
 3) [X] PrefixSums
-   - [X] *   100/100 PassingCars
-   - [X] **  100/100 GenomicRangeQuery
-   - [X] **  100/100 MinAvgTwoSlice
-   - [X] **  100/100 CountDiv
+   - [X] *   100/100 [[https://codility.com/demo/results/demoUBNQF7-WT7/][PassingCars]]
+   - [X] **  100/100 [[https://codility.com/demo/results/demoYM2HWJ-MEH/][GenomicRangeQuery]]
+   - [X] **  100/100 [[https://codility.com/demo/results/demoGW5VAV-VDJ/][MinAvgTwoSlice]]
+   - [X] **  100/100 [[https://codility.com/demo/results/demoG25BHZ-55Y/][CountDiv]]
 4) [-] Sorting
-   - [X]     100/100 Distinct
-   - [X] *   100/100 MaxProductOfThree
-   - [X] **  100/100 Triangle
+   - [X]     100/100 [[https://codility.com/demo/results/demo3UFF5N-RCA/][Distinct]]
+   - [X] *   100/100 [[https://codility.com/demo/results/demoF4FKJE-3NA/][MaxProductOfThree]]
+   - [X] **  100/100 [[https://codility.com/demo/results/demoZHN5VF-8QV/][Triangle]]
    - [ ] *** beta2010
 5) [-] Stacks and Queues
-   - [X] *   100/100 Brackets
-   - [X] *   100/100 Nesting
-   - [X] **  100/100 Fish
+   - [X] *   100/100 [[ https://codility.com/demo/results/demoE2G7WZ-DHH/][Brackets]]
+   - [X] *   100/100 [[https://codility.com/demo/results/demoA7UF5B-WYS/][Nesting]]
+   - [X] **  100/100 [[https://codility.com/demo/results/demo94SEB2-KQ9/][Fish]]
    - [ ] **  ???/100 StoneWall = sigma2010
 6) [X] Leader
-   - [X] *   100/100 Dominator
-   - [X] *   100/100 EquiLeader
+   - [X] *   100/100 [[https://codility.com/demo/results/demoC55AWQ-M7Z/][Dominator]]
+   - [X] *   100/100 [[https://codility.com/demo/results/demo9Q8ZZ9-4JE/][EquiLeader]]
 7) [X] Maximum slice problem
-   - [X] **  100/100 MaxDoubleSliceSum
-   - [X] **  100/100 MaxProfit
-   - [X] **  100/100 MaxSliceSum
+   1) [X] **  100/100 [[https://codility.com/demo/results/demo35X8V8-7A4/][MaxDoubleSliceSum]]
+   2) [X] **  100/100 [[https://codility.com/demo/results/demo7XE89M-FFE/][MaxProfit]]
+   3) [X] **  100/100 [[https://codility.com/demo/results/demoS7N7CT-477/][MaxSliceSum]]
 8) [-] Prime and composite numbers
-   - [X] *   100/100 MinPerimeterRectangle
-   - [X] *   100/100 CountFactors
-   - [X] **   90/100 Peaks
+   - [X] *   100/100 [[https://codility.com/demo/results/demoDW6CGJ-PC4/][MinPerimeterRectangle]]
+   - [X] *    92/100 [[https://codility.com/demo/results/demoDQQS2V-5KA/][CountFactors]]
+   - [X] **   90/100 [[https://codility.com/demo/results/demo9RKGFE-8TH/][Peaks]]
    - [ ] ***    /100 boron2013
 9) [-] Sieve of Eratosthenes
-   - [X] **   22/100 CountNonDivisible
+   - [X] **   22/100 [[https://codility.com/demo/results/demoKP3WWY-KFV/][CountNonDivisible]]
    - [ ] **     /100 CountSemiprimes
 10) [-] Euclidean algorithm
-    - [X] *   100/100 ChocolatesByNumbers
+    - [X] *   100/100 [[https://codility.com/demo/results/demo8P32GK-39P/][ChocolatesByNumbers]]
     - [ ] **     /100 CommonPrimeDivisors
 11) [ ] Fibonacci numbers
     - [ ] **     /100 FibFrog
@@ -53,9 +53,9 @@
     - [ ] **     /100 CountDistinctSlices
     - [ ] ***    /100 MinAbsSumOfTwo
 14) [X] Greedy algorithms
-    - [X] *      100/100 TieRopes ([[https://codility.com/demo/results/demo9RVY6F-8CU/][demo9RVY6F-8CU]])
+    - [X] *      100/100 [[ps://codility.com/demo/results/demo9RVY6F-8CU/][TieRopes]]
 15) [-] Future Training
-    - [X] *   100/100 BinaryGap
-    - [X] *   100/100 StrSymmetryPoint
+    - [X] *   100/100 [[https://codility.com/demo/results/demoSBJNDC-QY4/][BinaryGap]]
+    - [X] *   100/100 [[https://codility.com/demo/results/demoEJX2HE-R47/][StrSymmetryPoint]]
     - [ ] *      /100 TreeHeight
     - [ ] **     /100 ArrayInversionCount
