@@ -1,5 +1,5 @@
 
-* TODO LESSONS [6/15]
+* TODO LESSONS [7/15]
 1) [X] Time Complexity
    + [X] *   100/100 [[https://codility.com/demo/results/demoDDB576-XEE/][TapeEquilibrium]]
    + [X] *   100/100 [[https://codility.com/demo/results/demoSFMHFD-QJC/][FrogJmp]]
@@ -35,9 +35,9 @@
    - [X] *    92/100 [[https://codility.com/demo/results/demoDQQS2V-5KA/][CountFactors]]
    - [X] **   90/100 [[https://codility.com/demo/results/demo9RKGFE-8TH/][Peaks]]
    - [ ] ***    /100 boron2013
-9) [-] Sieve of Eratosthenes
+9) [X] Sieve of Eratosthenes
    - [X] **   22/100 [[https://codility.com/demo/results/demoKP3WWY-KFV/][CountNonDivisible]]
-   - [ ] **     /100 CountSemiprimes
+   - [X] **  100/100 [[https://codility.com/demo/results/demoSPTBKY-FCP/][CountSemiprimes]]
 10) [-] Euclidean algorithm
     - [X] *   100/100 [[https://codility.com/demo/results/demo8P32GK-39P/][ChocolatesByNumbers]]
     - [ ] **     /100 CommonPrimeDivisors
