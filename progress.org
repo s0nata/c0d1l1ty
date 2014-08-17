@@ -36,7 +36,7 @@
    - [X] **   90/100 [[https://codility.com/demo/results/demo9RKGFE-8TH/][Peaks]]
    - [ ] ***    /100 boron2013
 9) [X] Sieve of Eratosthenes
-   - [X] **   22/100 [[https://codility.com/demo/results/demoKP3WWY-KFV/][CountNonDivisible]]
+   - [X] **   66/100 [[https://codility.com/demo/results/demoVT95BB-6Z5/][CountNonDivisible]]
    - [X] **  100/100 [[https://codility.com/demo/results/demoSPTBKY-FCP/][CountSemiprimes]]
 10) [-] Euclidean algorithm
     - [X] *   100/100 [[https://codility.com/demo/results/demo8P32GK-39P/][ChocolatesByNumbers]]
