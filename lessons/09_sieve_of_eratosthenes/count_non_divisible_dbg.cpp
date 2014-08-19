@@ -1,7 +1,10 @@
 /*
  * Source: https://codility.com/demo/take-sample-test/count_non_divisible
  * Result: 22/100 @ https://codility.com/demo/results/demoFEKV2E-9AT/
+ * Result: 44/100 @ https://codility.com/demo/results/demoTY7TCM-WWC/
 */
+
+//debugging previous soultion
 
 #include <algorithm> //max_element()
 #include <vector>
@@ -29,8 +32,8 @@ vector<int> least_facts(int& n) {
 }
 
 // find all prime factors of n
-vector<int> find_primes(int n) {
-    vector<int> sieve = least_facts(n);
+vector<int> find_primes(int n, vector<int>& sieve) {
+//    vector<int> sieve = least_facts(n);
     
     vector<int> primes;
     while (sieve[n] > 0) {
@@ -43,8 +46,8 @@ vector<int> find_primes(int n) {
 }
 
 // find all divisors of n, including 1 and n
-set<int> find_divisors(int& n) {
-    vector<int> primes = find_primes(n);
+set<int> find_divisors(int& n, vector<int>& sieve) {
+    vector<int> primes = find_primes(n,sieve);
     set<int> divs;
     int tmp, factors_num = primes.size();
     
@@ -77,10 +80,12 @@ vector<int> solution(vector<int> &A) {
     //    and substract it from the total
     //    number of elements
     vector<int> ndivisors_occs(max_A+1,N);
+    vector<int> min_divs_sieve = least_facts(max_A);
+    
     for(int i = 0; i < max_A + 1;i++) {
         if (occurences[i] != 0) {
             //find divisors
-            set<int> occi_divs = find_divisors(i);
+            set<int> occi_divs = find_divisors(i,min_divs_sieve);
             //store their number of occurences
             for (set<int>::iterator it = occi_divs.begin();
                  it != occi_divs.end(); it++) {
