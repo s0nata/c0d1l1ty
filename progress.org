@@ -47,9 +47,9 @@
 12) [ ] Binary search algorithm
     - [ ] **     /100 MinMaxDivision
     - [ ] **     /100 NailingPlanks
-13) [ ] Caterpilar method
+13) [-] Caterpilar method
     - [ ] *      /100 CountTriangles
-    - [ ] *      /100 AbsDistinct
+    - [X] *    71/100 [[https://codility.com/demo/results/demoJDGZ6S-BAU/][AbsDistinct]]
     - [ ] **     /100 CountDistinctSlices
     - [ ] ***    /100 MinAbsSumOfTwo
 14) [X] Greedy algorithms
