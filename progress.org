@@ -48,7 +48,7 @@
     - [ ] **     /100 MinMaxDivision
     - [ ] **     /100 NailingPlanks
 13) [-] Caterpilar method
-    - [ ] *      /100 CountTriangles
+    - [X] *   100/100 [[https://codility.com/demo/results/demo62GZM6-X55/][CountTriangles]]
     - [X] *    71/100 [[https://codility.com/demo/results/demoJDGZ6S-BAU/][AbsDistinct]]
     - [ ] **     /100 CountDistinctSlices
     - [ ] ***    /100 MinAbsSumOfTwo
