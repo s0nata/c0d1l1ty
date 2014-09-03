@@ -1,40 +1,45 @@
-// debugging previously solved
-//https://codility.com/demo/results/demo4KPNTX-5RY/
-//https://codility.com/demo/results/demoDXREBP-ZS2/
-// current version
-https://codility.com/demo/results/demoJDGZ6S-BAU/
+/*
+ * source: https://codility.com/demo/take-sample-test/abs_distinct
+ * result:  92/100
+ */
 
-#include <cstdlib>
+#include <algorithm>
+
+// you can write to stdout for debugging purposes, e.g.
+// cout << "this is a debug message" << endl;
 
 int solution(vector<int> &A) {
+    // write your code in C++11
     int N = A.size();
     
     if (N == 1) return 1;
     
-    int left  = 0, 
-        right = N-1,
-        diff_cnt = 0;
-    
-    while (left <= right) {
-        diff_cnt++;
-        if (abs(A[left]) != abs(A[right])) {
-            diff_cnt++;    
-        }
-        left++;
-        right--;
+    int cnt = 0,
+        head = N-1,
+        tail = 0;
+        
+    while (head > tail) {
 
-        //move left
-        while (left < N-1) {
-            if (abs(A[left]) == abs(A[left-1])) left++;
-            else break;
-        }
+        while ((A[head] == A[head-1]) && (head > tail + 1)) head--;
+        while ((A[tail] == A[tail+1]) && (head > tail + 1)) tail++;
 
-        //move right
-        while (right > 0) {
-            if (abs(A[right]) == abs(A[right+1])) right--;
-            else break;
+        if (abs(A[head]) == abs(A[tail])) {
+            head--;
+            tail++;
+            cnt++;
         }
+        else if (abs(A[head]) > abs(A[tail])) {
+            head--;
+            cnt++;
+        }
+        else {
+            tail++;
+            cnt++;
+        }
+        
     }
     
-    return diff_cnt;
+    if (head == tail) cnt++;
+    
+    return cnt;
 }
