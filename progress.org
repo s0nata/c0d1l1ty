@@ -50,7 +50,7 @@
 13) [-] Caterpilar method
     - [X] *   100/100 [[https://codility.com/demo/results/demo62GZM6-X55/][CountTriangles]]
     - [X] *    92/100 [[https://codility.com/demo/results/demoYM455F-Y79/][AbsDistinct]]
-    - [ ] **     /100 CountDistinctSlices
+    - [X] **   30/100 [[https://codility.com/demo/results/demoP7KS8W-HZF/][CountDistinctSlices]]
     - [ ] ***    /100 MinAbsSumOfTwo
 14) [X] Greedy algorithms
     - [X] *      100/100 [[ps://codility.com/demo/results/demo9RVY6F-8CU/][TieRopes]]
